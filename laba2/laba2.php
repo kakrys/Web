@@ -8,7 +8,7 @@ echo "\nYour order is: $very_bad_unclear_name.";
 
 //2
 $randomname = 15;
-echo "\nrandomname = $randomname\n";
+echo "\n randomname = $randomname\n";
 $randomname2 = 11.4;
 echo "randomname2 = $randomname2\n";
 echo 15-3,"\n";
@@ -34,29 +34,27 @@ $answer *= 2;
 $answer -= 2;
 $answer /= 2;
 $answer -= $my_num;
-echo "answer = $answer\n";
+echo "answer= $answer\n";
 
 //14
 $a = 10;
 $b = 3;
-echo "a % b = ", $a % $b, "\n";
-if( $a % $b == 0)
-{
-    echo "Делится:\t", $a / $b, "\n";
-}
+echo "a%b= ", $a%$b, "\n";
+if( $a%$b == 0)
+{ echo "Делится:\t", $a / $b, "\n"; }
+
 else
-{
-    echo "Делится с остатком:\t", $a % $b, "\n";
-}
+{ echo "Делится с остатком:\t", $a % $b, "\n"; }
+
 $st = pow(2, 10);
 echo "2^10 = ", $st, "\n";
 echo "sqrt(245) = ", sqrt(245), "\n";
 $arr = Array(4,2,5,19,13,0,10);
 $res = 0;
+
 foreach ($arr as $n)
-{
-    $res += $n**2;
-}
+{ $res += $n**2; }
+
 echo "sqrt(res) = ", sqrt($res), "\n";
 echo "sqrt(379) = ", round(sqrt(379), 0), "\t",
 round(sqrt(379), 1), "\t", round(sqrt(379), 2), "\n";
@@ -82,30 +80,24 @@ $arr = Array(1,2,-1,-2,3,-3);
 for($n=0; $n < sizeof($arr); $n++)
 {
     if($arr[$n] < 0)
-    {
-        $arr[$n] *= -1;
-    }
+    { $arr[$n] *= -1; }
     echo "arr[$n] = ", $arr[$n], "\t";
     if($n == sizeof($arr)-1)
-    {
-        echo "\n";
-    }
+    { echo "\n"; }
 }
 $val = 100;
 $arr = Array(1);
 echo "arr[0] = ", 1, "\t";
 $iter = 0;
 for($n=2; $n <= floor(sqrt($val)); $n++)
-{
-    if($val % $n == 0)
+{ if($val % $n == 0)
     {
         $arr = array_pad($arr, sizeof($arr) + 1, $n);
         $iter++;
         echo "arr[$iter] = ", $arr[$iter], "\t";
         $arr = array_pad($arr, sizeof($arr) + 1, $val / $n);
         $iter++;
-        echo "arr[$iter] = ", $arr[$iter], "\t";
-    }
+        echo "arr[$iter] = ", $arr[$iter], "\t"; }
 }
 $arr = array_pad($arr, sizeof($arr) + 1, 100);
 echo "arr[", sizeof($arr)-1, "] = ", 100, "\n";
@@ -117,49 +109,38 @@ for($n=1; $n < 10; $n++)
     if( $result > 10)
     {
         echo "Нужно сложить ", $n+1, " элементов\n";
-        break;
-    }
+        break; }
 }
 
 //15
 function printStringReturnNumber()
 {
     echo "abasdba\n";
-    return 0;
-}
+    return 0;}
 $my_num = printStringReturnNumber();
 echo "my_num = ", $my_num, "\n";
 
 //16
 function increaseEnthusiasm($str)
-{
-    return ($str."!");
-}
+{ return ($str."!"); }
 echo increaseEnthusiasm("я люблю диффуры"), "\n";
 
 function repeatThreeTimes($str)
-{
-    return ($str.$str.$str);
-}
+{ return ($str.$str.$str); }
 echo repeatThreeTimes("pu"), "\n";
 echo increaseEnthusiasm(repeatThreeTimes("ya")), "\n";
 
 function cut($str, $num, $p2=10)
-{
-    return mb_substr($str, 0, $num);
-}
+{ return mb_substr($str, 0, $num); }
 
 function my_next($arr, $i)
 {
     if($i < sizeof($arr))
     {
         echo "arr[$i] = ", $arr[$i], "\t";
-        my_next($arr, $i+1);
-    }
+        my_next($arr, $i+1); }
     if($i == 0)
-    {
-        echo "\n";
-    }
+    { echo "\n"; }
     return 0;
 }
 $arr = range(1,10);
@@ -184,6 +165,7 @@ function my_add($val)
             return $result;
         }
     }
+
     else
     {
         return $val;
@@ -199,8 +181,7 @@ for($n = 0; $n < sizeof($arr); $n++)
     {
         $arr[$n] .= 'x';
     }
-    echo "arr[$n] = ", $arr[$n], "\t";
-}
+    echo "arr[$n] = ", $arr[$n], "\t";}
 echo "\n";
 function arrayFill($val, $len)
 {
@@ -214,20 +195,16 @@ function arrayFill($val, $len)
             echo "arr[$n] = ", $arr[$n], "\t";
         }
         echo "\n";
-        return $arr;
-    }
+        return $arr; }
     else
-    {
-        return;
-    }
+    { return; }
 
 }
 
 $arr = arrayFill('x', 5);
 for($n = 0; $n < 5; $n++)
 {
-    echo "arr[$n] = ", $arr[$n], "\t";
-}
+    echo "arr[$n] = ", $arr[$n], "\t"; }
 echo "\n";
 
 $arr = Array(array(1,2,3),
@@ -265,17 +242,12 @@ echo "Размерность: ", sizeof($arr), "\n";
 echo "Последний: ", array_pop($arr), "\tПредпоследний: ", array_pop($arr), "\n";
 
 //18
-
 function checkIfMoreTen($a, $b)
-{
-    return (($a + $b) > 10);
-}
+{ return (($a + $b) > 10); }
 echo checkIfMoreTen(5,6) ? 'true' : 'false', "\n";
 
 function areEqual($a, $b)
-{
-    return ($a == $b) ;
-}
+{ return ($a == $b) ; }
 echo areEqual(5,6) ? 'true' : 'false', "\n";
 
 $test = 0;
@@ -283,20 +255,13 @@ echo (($test == 0) ? 'верно' : ''), "\n";
 
 $age = 18;
 if($age < 10 || $age > 99)
-{
-    echo "Число меньше 10 или больше 99\n";
-}
+{ echo "Число меньше 10 или больше 99\n"; }
 else
-{
-    echo (array_sum(str_split($age)) <= 9) ? "Сумма цифр однозначна\n" : "Сумма цифр двузначна\n";
-}
-
+{ echo (array_sum(str_split($age)) <= 9) ? "Сумма цифр однозначна\n" : "Сумма цифр двузначна\n"; }
 $arr = range(1,3);
 
 function checkQuantity($arr)
-{
-    return (sizeof($arr)==3);
-}
+{ return (sizeof($arr)==3); }
 echo (checkQuantity($arr) == 1) ? array_sum($arr) : '';
 echo "\n";
 
@@ -307,33 +272,33 @@ for($n = 1; $n <=20; $n++)
     {
         echo "x";
     }
-    echo "\n";
-}
+    echo "\n";}
 
 //20
-$arr = range(1,10);
-echo "Среднее арифметическое = ", (array_sum($arr) / sizeof($arr)), "\n";
-echo "Сумма от 1 до 100 = ";
+$mas = array(1, 2, 3, 4, 5);
+$a = array_sum($mas)/ count($mas);
+echo "среднее арифметическое = ";
+echo $a, "\n";
 $arr = range(1, 100);
+echo "сумма от 1 до 100 =";
 echo "\n", array_sum($arr);
-$arr = array(1,4,9,16,25);
-$arr = array_map(" sqrt", $arr);
-for($n=0; $n < sizeof($arr); $n++)
-{
-    echo "arr[$n] = ", $arr[$n], "\t";
-}
 echo "\n";
-
-$keys = range('a', 'z');
-$values = range(1,26);
-$arr = array_combine($keys, $values);
-foreach($keys as $n)
-{
-    echo "arr[$n] = ", $arr[$n], "\t";
+$m = array (9, 4 ,1, 16, 25, 100, 64);
+function sq($a){
+    return sqrt($a);
 }
-echo "\n";
-
-$str = '1234567890';
-$arr = str_split($str, 2);
-$result = array_sum($arr);
-echo $result, "\n";
+$m = array_map('sq', $m);
+foreach ($m as $v){
+    echo $v, " ";
+}
+echo "\n", "\n";
+$mm = array_combine(range('a', 'z'), range(1, 26));
+$r = 1;
+while ($r <= 26){
+    echo key($mm), " ", current($mm), "\n";
+    next($mm);
+    $r +=1;}
+echo "\n", "\n";
+$a = '1234567890';
+$masi = str_split($a, 2);
+echo "12+34+56+78+90 = ",array_sum($masi), "\n";
